@@ -1,0 +1,16 @@
+.font-serif,
+*[font="serif"] {
+    font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+}
+.font-sans-serif,
+*[font="sans-serif"] {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+.font-modern,
+*[font="modern"] {
+    font-family: 'Inter', 'Lato', Arial, Helvetica, sans-serif;
+}
+.font-handwritten,
+*[font="handwritten"] {
+    font-family: 'Shantell Sans', 'Comic Sans MS', sans-serif;
+}

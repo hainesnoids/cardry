@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    box-sizing: border-box;
+    position: relative;
+    --accent: #4192ee;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #1d1e22;
+    color: #fff;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 12px;
+}
+.logo {
+    height: 36px;
+    margin-top: 4px;
+}
+a, a:visited {
+    color: var(--accent);
+}
+footer {
+    background-color: #1d1e22;
+    color: #fff;
+    padding: 18px 0;
+    margin: 48px 0 0;
+}
+footer span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.main {
+    width: 1050px;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 50px;
+    flex: 1;
+}
+main {
+    width: 720px;
+}
+aside {
+    width: 280px;
+    margin-top: 32px;
+}
+aside h1 {
+    font-size: 18pt;
+    margin-bottom: 0;
+}
+.entries {
+    border: 1px solid #a4a7b2;
+    border-radius: 6px;
+    max-height: 480px;
+}
+.entries-header {
+    height: 40px;
+    padding: 7px 8px;
+    font-size: 16pt;
+    font-weight: bold;
+    user-select: none;
+}
+.entries[open] .entries-header {
+    border-bottom: 1px solid #a4a7b2;
+}
+chips {
+    display: block;
+    max-height: 437px;
+    overflow-y: scroll;
+    border-radius: 0 0 6px 6px;
+}
+chip {
+    display: block;
+    width: 100%;
+    padding: 2px 4px 4px;
+}
+chip:nth-of-type(2n) {
+    background-color: #f5f6f8;
+}
+chip name {
+    display: inline-block;
+    font-weight: bold;
+    width: 100%;
+}
+chip desc {
+    display: block;
+}
+cards {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    transform-origin: 0 100%;
+    perspective: 800px;
+}
+card name,
+card desc {
+    font-size: 24pt;
+}
+card .name,
+card .desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #a4a7b2;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    position: absolute;
+}
+card[data-flipped="init"] .name {
+    animation: flip-in 0s ease-out forwards;
+}
+card[data-flipped="init"] .desc {
+    animation: flip-out 0s ease-out forwards;
+}
+card[data-flipped="false"] .name {
+    animation: flip-in .4s ease-out forwards;
+}
+card[data-flipped="false"] .desc {
+    animation: flip-out .4s ease-out forwards;
+}
+card[data-flipped="true"] .name {
+    animation: flip-out .4s ease-out forwards;
+}
+card[data-flipped="true"] .desc {
+    animation: flip-in .4s ease-out forwards;
+}
+@keyframes flip-out {
+    0% {
+        transform: rotateX(0deg);
+        visibility: visible;
+        z-index: 1;
+    }
+    50% {
+        transform: rotateX(90deg);
+        visibility: visible;
+        z-index: 1;
+    }
+    100% {
+        transform: rotateX(180deg);
+        visibility: hidden;
+        z-index: 1;
+    }
+}
+@keyframes flip-in {
+    0% {
+        transform: rotateX(-180deg);
+        visibility: hidden;
+        z-index: 2;
+    }
+    50% {
+        transform: rotateX(-90deg);
+        visibility: hidden;
+        z-index: 2;
+    }
+    100% {
+        transform: rotateX(0deg);
+        visibility: visible;
+        z-index: 2;
+    }
+}
+.card-wrapper:has(.flip:hover) card {
+    transform: rotate(0);
+}
+.card-wrapper:has(.flip:hover) card:not([data-priority="0"]) {
+    opacity: 0;
+}
+card[data-priority="0"] {
+    opacity: 1;
+    z-index: 9;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 0;
+}
+card[data-priority="1"] {
+    opacity: 1;
+    z-index: 8;
+    transform: rotate(2deg);
+    position: absolute;
+    top: 0;
+}
+card[data-priority="2"] {
+    opacity: 1;
+    z-index: 7;
+    transform: rotate(4deg);
+    position: absolute;
+    top: 0;
+}
+card[data-position="out-left"] {
+    animation: card-back .3s ease-out;
+    transform: rotate(0deg);
+    opacity: 0;
+}
+card[data-position="in-left"] {
+    animation: card-forward .3s ease-out;
+    transform: rotate(0deg);
+    opacity: 1;
+}
+@keyframes card-back {
+    0% {
+        z-index: 10;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        z-index: 10;
+        transform: rotate(-35deg);
+        opacity: 1;
+    }
+    100% {
+        z-index: 5;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}
+@keyframes card-forward {
+    0% {
+        z-index: 5;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        z-index: 5;
+        transform: rotate(-35deg);
+        opacity: 1;
+    }
+    100% {
+        z-index: 10;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+card {
+    transition:
+            opacity .3s ease-out,
+            transform .3s ease-out;
+    opacity: 0;
+    z-index: 6;
+    position: absolute;
+    transform: rotate(6deg);
+}
+.card-wrapper {
+    width: 720px;
+    height: 405px;
+    position: relative;
+}
+.card-buttons {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: "prev flip next";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+.card-buttons button {
+    background: none;
+    border: none;
+}
+.prev {
+    grid-area: prev;
+    cursor: url('../img/w-resize.png') 4 12, w-resize;
+}
+.flip {
+    grid-area: flip;
+    cursor: url('../img/cell.png') 12 12, cell;
+}
+.next {
+    grid-area: next;
+    cursor: url('../img/e-resize.png') 20 12, e-resize;
+}
+.font-select {
+    border: 1px solid #a4a7b2;
+    border-radius: 6px;
+}
+.font-select select {
+    width: 100%;
+}
+.font-select select option {
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14pt;
+}
+.card-count {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 11;
+}
+#cardry-export-dialog h1 {
+    margin: 0;
+}
+@media (max-width: 719px) {
+    main {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Metadata -->
+        <title>Cardry</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="Probably the simplest flash card tool.">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/root.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <!-- Scripts -->
+        <script src="js/index.js"></script>
+        <script src="js/file.js"></script>
+        <script src="js/b64.js"></script>
+    </head>
+    <body>
+        <dialog id="cardry-export-dialog">
+            <h1>Export</h1>
+            <p>Copy this link to share your flash cards.</p>
+            <input id="export-url"><br>
+            <button id="cardry-export-close">Close</button>
+        </dialog>
+        <header>
+            <a href="/"><img class="logo" src="img/logo.svg" alt="Cardry"/></a>
+            <nav></nav>
+        </header>
+        <div class="main">
+            <main>
+                <h1 class="cardry-page-title">Document Title</h1>
+                <div class="card-wrapper">
+
+                    <div class="card-buttons">
+                        <button class="prev"></button>
+                        <button class="flip"></button>
+                        <button class="next"></button>
+                    </div>
+                    <cards font="sans-serif">
+                        <div class="card">
+                            <card>
+                            </card>
+                            <card>
+                            </card>
+                        </div>
+                    </cards>
+                </div>
+                <div class="card-count">
+                    <span class="card-index">0</span> / <span class="total-cards">0</span>
+                </div>
+            </main>
+            <aside>
+                <details class="entries">
+                    <summary class="entries-header">
+                        Entries
+                    </summary>
+                    <chips>
+                        <chip>
+                            <name>animus, animi, m.</name>
+                            <desc>Noun: spirit, soul, mind</desc>
+                        </chip>
+                    </chips>
+                </details>
+                <h1>Card Font</h1>
+                <div class="font-select">
+                    <select size="3">
+                        <option class="font-serif" value="serif">Serif</option>
+                        <option selected class="font-sans-serif" value="sans-serif">Sans Serif</option>
+                        <option class="font-handwritten" value="handwritten">Handwritten</option>
+                    </select>
+                </div>
+                <button id="export">Share</button>
+            </aside>
+        </div>
+        <footer>
+            <span>Cardry 1.0.0 (sunburst-pinkie)</span>
+            <span>By <a href="https://ws4k.net">Hainesnoids</a></span>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="96"
+   height="24"
+   viewBox="0 0 25.399999 6.35"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.7625px;font-family:'Inter 28pt';-inkscape-font-specification:'Inter 28pt Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1"
+       x="0.42628291"
+       y="4.7090149"
+       id="text1"><tspan
+         id="tspan1"
+         style="font-size:4.7625px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1"
+         x="0.42628291"
+         y="4.7090149">Cardry</tspan></text>
+    <g
+       id="g6"
+       transform="translate(3.0733733)">
+      <path
+         id="path4"
+         style="fill:#1d1e22;fill-opacity:1;stroke:#ffffff;stroke-width:0.529167;stroke-dasharray:none;stroke-opacity:1"
+         d="m 21.577297,8.9840784 h 5.35 a 0.5,0.5 45 0 1 0.5,0.5 v 2.7041666 a 0.5,0.5 135 0 1 -0.5,0.5 h -5.35 a 0.5,0.5 45 0 1 -0.5,-0.5 V 9.4840784 a 0.5,0.5 135 0 1 0.5,-0.5 z"
+         transform="rotate(10,64.038178,-34.146336)" />
+      <path
+         id="rect1"
+         style="fill:#1d1e22;fill-opacity:1;stroke:#ffffff;stroke-width:0.529167;stroke-dasharray:none;stroke-opacity:1"
+         d="m 21.577297,8.9840784 h 5.35 a 0.5,0.5 45 0 1 0.5,0.5 v 2.7041666 a 0.5,0.5 135 0 1 -0.5,0.5 h -5.35 a 0.5,0.5 45 0 1 -0.5,-0.5 V 9.4840784 a 0.5,0.5 135 0 1 0.5,-0.5 z"
+         transform="translate(-7.4797969,-8.1740532)" />
+      <path
+         id="path1"
+         style="fill:#4192ee;fill-opacity:1;stroke:none;stroke-width:0.0760367;stroke-dasharray:none;stroke-opacity:1"
+         d="m 15.449585,1.8683584 a 0.26458332,0.26458332 0 0 0 -0.264584,0.2645833 0.26458332,0.26458332 0 0 0 0.264584,0.2645833 h 3.175 A 0.26458332,0.26458332 0 0 0 18.889168,2.1329417 0.26458332,0.26458332 0 0 0 18.624585,1.8683584 Z" />
+      <path
+         id="path2"
+         style="fill:#4192ee;fill-opacity:1;stroke:none;stroke-width:0.0760367;stroke-dasharray:none;stroke-opacity:1"
+         d="m 14.920418,2.9266918 c -0.146125,-4e-7 -0.264584,0.1184577 -0.264584,0.2645833 0,0.1461256 0.118459,0.2645837 0.264584,0.2645833 h 3.175 c 0.146126,-2e-7 0.264583,-0.1184581 0.264583,-0.2645833 0,-0.1461252 -0.118457,-0.2645831 -0.264583,-0.2645833 z" />
+    </g>
+  </g>
+</svg>
