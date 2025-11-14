@@ -94,15 +94,20 @@ function flipCard() {
     let isFlipped = itm.getAttribute('data-flipped') === 'true';
     itm.setAttribute('data-flipped',!isFlipped);
 }
-function goToCardURL(csv) {
-    const b64string = toBinary(csv);
-    window.location.href = `${window.location.origin}/card?d=${b64string}`;
-}
 function exportCards() {
     const csv = encodeFile(cards, cardTitle);
     const b64string = toBinary(csv);
     document.querySelector('#export-url').value = `${window.location.origin}/card?d=${b64string}`;
-    document.querySelector('#cardry-export-dialog').showModal();
+    //document.querySelector('#cardry-export-dialog').showModal();
+}
+function download() {
+    url = `data:text/csv;utf8,${encodeFile(cards, cardTitle)}`;
+    filename = `Cardry - ${cardTitle}.csv`;
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    link.remove();
 }
 document.addEventListener('DOMContentLoaded', () => {
     // init importing scheme
@@ -110,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (urlParams.get('d')) {
         importCards(fromBinary(urlParams.get('d')));
     }
+
+    // card handling
     document.querySelector('.prev').addEventListener('click', () => {
         changeCard(-1);
     })
@@ -119,11 +126,43 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.next').addEventListener('click', () => {
         changeCard(1);
     })
+
+    document.body.addEventListener('keydown',(e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            changeCard(-1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            changeCard(1);
+        } else if (e.key === ' ') {
+            e.preventDefault();
+            flipCard();
+        }
+    })
+
     document.querySelector('.font-select select').addEventListener('change',(e) => {
         document.querySelector('cards').setAttribute('font',e.target.value);
     })
-    document.querySelector('#export').addEventListener('click', exportCards);
+    document.querySelector('#copy-link').addEventListener('click',() => {
+        const csv = encodeFile(cards, cardTitle);
+        const b64string = toBinary(csv);
+        try {
+            navigator.clipboard.writeText(`${window.location.origin}/card?d=${b64string}`);
+            document.querySelector('#copy-link span').innerHTML = 'check';
+            setTimeout(() => {
+                document.querySelector('#copy-link span').innerHTML = 'content_copy';
+            },3000)
+        } catch(e) {
+            document.querySelector('#copy-link span').innerHTML = 'exclamation';
+            setTimeout(() => {
+                document.querySelector('#copy-link span').innerHTML = 'content_copy';
+            },3000);
+        }
+    })
+    /*document.querySelector('#export').addEventListener('click', exportCards);
     document.querySelector('#cardry-export-close').addEventListener('click',() => {
         document.querySelector('#cardry-export-dialog').close();
-    })
+    })*/
+    document.querySelector('#download').addEventListener('click',download);
+    exportCards();
 })

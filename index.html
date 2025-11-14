@@ -8,8 +8,8 @@
         <meta name="description" content="Probably the simplest flash card tool.">
         <!-- Stylesheets -->
         <link rel="stylesheet" href="css/root.css">
+        <link rel="stylesheet" href="css/frameworks.css">
         <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/cards.css">
         <link rel="stylesheet" href="css/home.css">
         <!-- Scripts -->
         <script src="js/index.js"></script>
@@ -27,17 +27,21 @@
                 <h1 class="reallybig">The Go-to Flash Card Platform</h1>
                 <p class="kindabig">No logins, no unnecessary subscriptions. Just flash cards, free forever.</p>
                 <br><br><br>
-                <div class="inputbox">
+                <!--<div class="inputbox">
                     <label for="input">Paste your CSV data here</label> <a href="/docs">?</a>
                     <br><br>
                     <textarea id="input"></textarea>
                     <br><br>
-                    <button id="import-button">Create my flash cards</button>
+                    <button class="secondary" id="import-button">Create my flash cards</button>
+                </div>-->
+                <div class="button-row">
+                    <button class="primary" id="csv-import">Import from Google Sheets</button>
+                    <a href="/docs"><button>?</button></a>
                 </div>
             </main>
         </div>
         <footer>
-            <span>Cardry 1.0.0 (sunburst-pinkie)</span>
+            <span>Cardry 1.1.0 (sunburst-twilight)</span>
             <span>By <a href="https://ws4k.net">Hainesnoids</a></span>
         </footer>
     </body>

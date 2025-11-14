@@ -3,6 +3,7 @@
     box-sizing: border-box;
     position: relative;
     --accent: #4192ee;
+    --secondary: #ffcd1f;
 }
 body {
     margin: 0;
@@ -133,16 +134,16 @@ card[data-flipped="init"] .desc {
     animation: flip-out 0s ease-out forwards;
 }
 card[data-flipped="false"] .name {
-    animation: flip-in .4s ease-out forwards;
+    animation: flip-in .3s ease-out forwards;
 }
 card[data-flipped="false"] .desc {
-    animation: flip-out .4s ease-out forwards;
+    animation: flip-out .3s ease-out forwards;
 }
 card[data-flipped="true"] .name {
-    animation: flip-out .4s ease-out forwards;
+    animation: flip-out .3s ease-out forwards;
 }
 card[data-flipped="true"] .desc {
-    animation: flip-in .4s ease-out forwards;
+    animation: flip-in .3s ease-out forwards;
 }
 @keyframes flip-out {
     0% {
@@ -277,6 +278,7 @@ card {
 .card-buttons button {
     background: none;
     border: none;
+    outline: none;
 }
 .prev {
     grid-area: prev;
@@ -296,6 +298,10 @@ card {
 }
 .font-select select {
     width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-radius: 5px;
 }
 .font-select select option {
     height: 44px;
@@ -314,6 +320,30 @@ card {
 }
 #cardry-export-dialog h1 {
     margin: 0;
+}
+.aside-share-window {
+    margin: 12px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+.aside-card-url {
+    display: flex;
+    gap: 6px;
+}
+#export-url {
+    width: auto;
+    height: 22px;
+    flex: 1;
+}
+.aside-context-buttons,
+.button-row {
+    display: flex;
+    gap: 6px;
+}
+.button-row {
+    justify-content: center;
 }
 @media (max-width: 719px) {
     main {
